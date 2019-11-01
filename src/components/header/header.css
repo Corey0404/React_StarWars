@@ -1,0 +1,28 @@
+.header {
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin-right: 40px;
+}
+
+.header ul {
+    margin-top: 10px;
+}
+
+.header li {
+    list-style: none;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    color: #00bc8c;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+.header li:hover {
+    background-color: #444;
+    text-decoration: none;
+    font-weight: 700;
+}

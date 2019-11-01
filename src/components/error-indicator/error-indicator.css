@@ -1,0 +1,16 @@
+.error-indicator {
+    margin: auto;
+    color: orange;
+    margin-top: 80px;
+}
+
+.error-indicator h4 {
+    font-size: 35px;
+}
+
+.text-error {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
