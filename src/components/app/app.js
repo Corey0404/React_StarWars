@@ -7,6 +7,7 @@ import './app.css'
 import ErrorButton from '../error-button'
 import ErrorIndicator from '../error-indicator'
 import PeoplePage from '../people-page'
+import TogglePlanetButton from '../toggle-planet-button'
 
 
 export default class App extends Component {
@@ -42,11 +43,7 @@ export default class App extends Component {
             <div className="container app">
                 <Header />
                 {planet}
-                <button
-                    className="toggle-planet btn btn-warning btn-lg"
-                    onClick={this.toggleRandomPlanet}>
-                    Toggle Random Planet
-                </button>
+                <TogglePlanetButton toggleRandomPlanet={this.toggleRandomPlanet} />
                 <PeoplePage />
             </div>
         )
