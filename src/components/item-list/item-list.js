@@ -1,10 +1,6 @@
 import React from 'react'
 
-import withData from '../hoc-helpers'
-
 import './item-list.css'
-import SwapiService from '../../services/swapi-services'
-import Spinner from '../spinner'
 
 const ItemList = (props) => {
         const {data, onItemSelected, children: renderLabel} = props

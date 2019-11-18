@@ -10,8 +10,7 @@ import TogglePlanetButton from '../toggle-planet-button'
 import SwapiService from '../../services/swapi-services'
 
 import Row from '../row'
-import ItemDetails, { Record } from '../item-details/item-details'
-import ItemList from '../item-list'
+
 import ErrorBoundry from '../error-boundry/'
 import {
     PersonDetails,
