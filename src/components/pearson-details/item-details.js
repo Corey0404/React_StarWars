@@ -1,53 +1,58 @@
 import React, { Component } from 'react'
 
-import './pearson-details.css'
+import './item-details.css'
 import SwapiService from '../../services/swapi-services'
 
 import Spinner from '../spinner'
 import ErrorButton from '../error-button'
 
-export default class PearsonDetails extends Component {
+export default class ItemDetails extends Component {
 
     swapiService = new SwapiService()
 
     state = {
-        person: null
+        item: null,
+        image: null
     }
 
     componentDidMount() {
-        this.updatePerson()
+        this.updateItem()
     }
 
    componentDidUpdate(prevProps) {
-    if(this.props.personId !== prevProps.personId){
-        this.updatePerson()
+    if(this.props.itemId !== prevProps.itemId){
+        this.updateItem()
     }
    } 
 
-    updatePerson() {
-        const {personId} = this.props
-        if(!personId) {
+    updateItem() {
+        const {itemId, getData, getImageUrl} = this.props
+        if(!itemId) {
             return
         }
 
-        this.swapiService
-            .getPerson(personId)
-            .then((person) => {
-                this.setState({person})
+        getData(itemId)
+            .then((item) => {
+                this.setState({
+                    item,
+                    image: getImageUrl(item)
+                })
             })
     }
 
     render() {
-
-        if(!this.state.person) {
+       
+        if(!this.state.item) {
             return <Spinner />
         }
 
-        const {id, name, gender, birthYear, eyeColor} = this.state.person
+        const {item, image} = this.state
+       
+        const {name, gender, birthYear, eyeColor} = item 
 
         return (
             <div className="pearson-details jumbotron rounded d-flex">
-                <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt="" />
+                <img src={image} alt="item" />
                 <div className="pearson-container">
                     <h2>{name}</h2>
                     <ul className="list-group list-group-flush">
@@ -62,6 +67,9 @@ export default class PearsonDetails extends Component {
                         <li className="list-group-item">
                             <span className="term">Eye Color</span> 
                             <span>{eyeColor}</span>
+                        </li>
+                        <li className="list-group-item">
+                            <ErrorButton/>
                         </li>
                     </ul>
                 </div>

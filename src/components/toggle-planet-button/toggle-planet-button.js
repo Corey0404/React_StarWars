@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './toggle-planet-button.css'
+
 export default class TogglePlanetButton extends Component {
 
     render() {

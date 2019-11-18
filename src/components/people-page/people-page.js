@@ -1,23 +1,18 @@
 import React, { Component } from 'react'
 
-import ItemList from '../item-list'
-import PearsonDetails from '../pearson-details'
-
+import ItemList from '../item-list/item-list'
+import ItemDetails from '../item-details'
 import './people-page.css'
-import ErrorIndicator from '../error-indicator'
+import Row from '../row';
+import ErrorBoundry from '../error-boundry'
+import SwapiService from '../../services/swapi-services'
 
 export default class PeoplePage extends Component {
 
-    state = {
-        selectedPerson: 3,
-        hasError: false
-    }
+    swapiService = new SwapiService()
 
-    componentDidCatch(error, info) {
-        debugger
-        this.setState({
-            hasError: true
-        })
+    state = {
+        selectedPerson: 3
     }
 
     onPersonSelected = (selectedPerson) => {
@@ -26,19 +21,25 @@ export default class PeoplePage extends Component {
 
     render() {
 
-        if(this.state.hasError) {
-            return <ErrorIndicator />
-        }
+        const itemList = (
+            <ItemList 
+                onItemSelected={() => {}} 
+                getData={this.swapiService.getAllPeople}>
+                {(i) => (
+                    `${i.name} (${i.birthYear})`
+                )}    
+            </ItemList>        
+        )
+
+        const pearsonDetails = (
+            <ErrorBoundry>
+                <ItemDetails personId={this.state.selectedPerson} />
+            </ErrorBoundry>
+        )
 
         return (
-            <div className="d-flex row">
-                <div className="col-sm-6">
-                    <ItemList onItemSelected={this.onPersonSelected} />
-                </div>
-                <div className="col-sm-6">
-                    <PearsonDetails personId={this.state.selectedPerson} />
-                </div>
-            </div>
+            <Row left={itemList}
+                right={pearsonDetails} />
         )
     }
 }
