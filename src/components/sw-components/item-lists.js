@@ -3,7 +3,7 @@ import ItemList from '../item-list'
 import withData from '../hoc-helpers/with-data'
 import SwapiService from '../../services/swapi-services'
 
-const swapiService = new SwapiService
+const swapiService = new SwapiService()
 
 const {
     getAllPeople,
@@ -23,12 +23,12 @@ const withChildFunction = (Wrapped, fn) => {
   
 const renderName = ({name}) => <span>{name}</span> 
 
-const PersonList = withData
-                        (withChildFunction(ItemList, renderName), 
+const PersonList = withData(
+                        withChildFunction(ItemList, renderName), 
                         getAllPeople)
 
-const PlanetList = withData
-                        (withChildFunction(ItemList, renderName), 
+const PlanetList = withData(
+                        withChildFunction(ItemList, renderName), 
                         getAllPlanets)
 
 const StarshipList = withData(

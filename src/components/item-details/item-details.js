@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import './item-details.css'
 import Spinner from '../spinner'
-import ErrorButton from '../error-button'
 
 const Record = ({ item, field, label }) => {
     return (
@@ -69,7 +68,6 @@ export default class ItemDetails extends Component {
                             })
                         }
                     </ul>
-                    <ErrorButton />
                 </div>
             </div>
         )
