@@ -1,24 +1,27 @@
-.pearson-details {
+.item-details {
     padding: 20px 50px 20px 20px;
     font-weight: 700;
     margin-top: 20px;
+    background: rgba(48,48,48, 0.8 );
 }
 
-.pearson-container {
+.item-container {
     width: 100%;
 }
 
-.pearson-details img {
-    min-width: 200px;
-    height: 260px;
+.item-details img {
+    height: 307px;
     border-radius: 10px;
     margin-right: 30px;
 }
 
-.pearson-details h2 {
+.item-details h2 {
     margin-bottom: 20px;
     margin-top: 20px;
     font-size: 1.5rem;
+}
+.item-details li {
+    background: none;
 }
 
 .term {

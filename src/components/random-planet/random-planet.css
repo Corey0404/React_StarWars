@@ -1,11 +1,11 @@
 .random-planet {
-    padding: 20px;
+    padding: 10px;
+    background: rgba(48,48,48, 0.2 );
    
 }
 
 .planet-image {
-    height: 230px;
-    width: 230px;
+    height: 212px;
     border-radius: 10px;
     margin-right: 30px;
 }
@@ -13,10 +13,12 @@
 .random-planet ul {
     padding-left: 20px;
     margin-top: 20px;
+   
 }
 
 .random-planet li {
     font-weight: 700;
+    background: none;
 }
 
 .term {
@@ -26,3 +28,4 @@
 .random-planet.none {
     display: none !important;
 }
+

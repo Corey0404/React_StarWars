@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
-import {PlanetDetails, PlanetList} from '../sw-components'
+import { PlanetDetails, PlanetList } from '../sw-components'
 import Row from '../row'
 export default class PlanetsPage extends Component {
     state = {
-        selectedItem: 4
+        selectedItem: 8
     }
 
     onItemSelected = (selectedItem) => {
-        this.setState({selectedItem})
+        this.setState({ selectedItem })
     }
 
     render() {
-        const {selectedItem} = this.state
+        const { selectedItem } = this.state
 
         return (
             <Row
-                left={<PlanetList onItemSelected={this.onItemSelected}/>}
+                left={<PlanetList onItemSelected={this.onItemSelected} />}
                 right={<PlanetDetails itemId={selectedItem} />}
             />
         )

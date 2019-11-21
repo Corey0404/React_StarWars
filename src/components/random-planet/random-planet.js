@@ -19,7 +19,7 @@ export default class RandomPlanet extends Component {
 
     componentDidMount() {
         this.updatePlanet()
-       this.interval = setInterval(this.updatePlanet, 3000)
+       this.interval = setInterval(this.updatePlanet, 10000)
     }
 
     componentWillUnmount() {
@@ -61,7 +61,7 @@ export default class RandomPlanet extends Component {
         const content = hasData ? <PlanetView planet={planet} /> : null
 
         return (
-            <div className="random-planet jumbotron rounded d-flex">
+            <div className="random-planet  rounded d-flex">
                 {errorMessage}
                 {spinner}
                 {content}

@@ -57,9 +57,9 @@ export default class ItemDetails extends Component {
         const { name } = item
 
         return (
-            <div className="pearson-details jumbotron rounded d-flex">
+            <div className="item-details jumbotron rounded d-flex">
                 <img src={image} alt="item" />
-                <div className="pearson-container">
+                <div className="item-container">
                     <h2>{name}</h2>
                     <ul className="list-group list-group-flush">
                         {

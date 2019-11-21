@@ -5,8 +5,11 @@ import { withSwapiService } from '../hoc-helpers'
 const PersonDetails = (props) => {
     return (
         <ItemDetails {...props}>
-            <Record field="gender" label="Gender" />
-            <Record field="eyeColor" label="Eye Color" />
+            <Record field="gender" label="Gender: " />
+            <Record field="eyeColor" label="Eye Color: " />
+            <Record field="birthYear" label="BirthYear: " />
+            <Record field="mass" label="Mass: " />
+
         </ItemDetails>
     )
 }

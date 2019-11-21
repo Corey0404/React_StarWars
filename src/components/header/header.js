@@ -1,15 +1,25 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import './header.css'
 
 const Header = () => {
+
     return (
         <div className="d-flex header">
-            <h1>Star DB</h1>
+            <h1>
+                <Link to="/" > Star DB</Link>
+            </h1>
             <ul className="btn-group">
-                <li>People</li>
-                <li>Planets</li>
-                <li>Starships</li>
+                <li>
+                    <Link to="/people/">People</Link> 
+                </li>
+                <li>
+                    <Link to="/planets/">Planets</Link> 
+                </li>
+                <li>
+                    <Link to="/starships/">Starships</Link> 
+                </li>
             </ul>
         </div>
     )
