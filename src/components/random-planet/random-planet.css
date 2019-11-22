@@ -1,6 +1,7 @@
 .random-planet {
     padding: 10px;
     background: rgba(48,48,48, 0.2 );
+    margin-bottom: 20px;
    
 }
 
@@ -25,7 +26,5 @@
     margin-right: 5px;
 }
 
-.random-planet.none {
-    display: none !important;
-}
+
 
